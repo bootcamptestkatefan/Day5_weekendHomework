@@ -10,9 +10,15 @@ public class ParkingBoy {
     }
 
     public ParkingTicket park(Car car) {
-        ParkingTicket ticket = this.parkingLot.assign(car);
-        this.lastErrorMessage = null;
-        return ticket;
+        if (this.parkingLot.getAvailableParkingPosition() > 0) {
+            ParkingTicket ticket = this.parkingLot.assign(car);
+            this.lastErrorMessage = null;
+            return ticket;
+        }
+        else {
+            this.lastErrorMessage = "親，停車場已滿，你過主啦。";
+            return null;
+        }
     }
 
     public Car fetch(ParkingTicket ticket) {
