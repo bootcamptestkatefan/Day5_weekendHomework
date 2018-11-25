@@ -10,13 +10,15 @@ public class ParkingBoy {
     }
 
     public ParkingTicket park(Car car) {
-        // TODO: Please implement the method
-        throw new RuntimeException("Not implemented");
+        ParkingTicket ticket = this.parkingLot.assign(car);
+        return ticket;
     }
 
     public Car fetch(ParkingTicket ticket) {
+        //imput ticket, return car
+        Car car = this.parkingLot.fetch(ticket);
+        return car;
         // TODO: Please implement the method
-        throw new RuntimeException("Not implemented");
     }
 
     public String getLastErrorMessage() {

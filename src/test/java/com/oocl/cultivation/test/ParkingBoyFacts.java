@@ -13,7 +13,7 @@ class ParkingBoyFacts {
     void should_park_a_car_to_a_parking_lot_and_get_it_back() {
         ParkingLot parkingLot = new ParkingLot();
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
-        Car car = new Car();
+        Car car = new Car("fantszching");
 
         ParkingTicket ticket = parkingBoy.park(car);
         Car fetched = parkingBoy.fetch(ticket);
@@ -25,8 +25,8 @@ class ParkingBoyFacts {
     void should_park_multiple_cars_to_a_parking_lot_and_get_them_back() {
         ParkingLot parkingLot = new ParkingLot();
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
-        Car firstCar = new Car();
-        Car secondCar = new Car();
+        Car firstCar = new Car("fantszching");
+        Car secondCar = new Car("cheungchingki");
 
         ParkingTicket firstTicket = parkingBoy.park(firstCar);
         ParkingTicket secondTicket = parkingBoy.park(secondCar);
