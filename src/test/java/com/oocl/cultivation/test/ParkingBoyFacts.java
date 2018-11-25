@@ -60,7 +60,7 @@ class ParkingBoyFacts {
         parkingBoy.fetch(wrongTicket);
         String message = parkingBoy.getLastErrorMessage();
 
-        assertEquals("Unrecognized parking ticket.", message);
+        assertEquals("親，你拿錯票了。", message);
     }
 
     @Test
@@ -97,7 +97,7 @@ class ParkingBoyFacts {
         parkingBoy.fetch(null);
 
         assertEquals(
-            "Please provide your parking ticket.",
+                "親，你的票在哪?",
             parkingBoy.getLastErrorMessage());
     }
 
@@ -124,7 +124,7 @@ class ParkingBoyFacts {
         parkingBoy.fetch(ticket);
 
         assertEquals(
-            "Unrecognized parking ticket.",
+                "親，你的票用過了。",
             parkingBoy.getLastErrorMessage()
         );
     }
